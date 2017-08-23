@@ -14,3 +14,34 @@
   ="StudYr"><br>
 </div>
 
+<div id="options">
+  <button id="addStudents"(click)="addStudentEntry()">
+    Add Student Entry</button>
+    <button id="listStudent"(click)="listStudents()">
+      List Studentss   </button>
+</div>
+    <div>
+      {{messages}}
+    </div>
+    <div *ngif = "printing">
+      <table>
+        <thead>
+          <tr>
+            <th>Student Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Program Installedd</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+      </table>
+      <tbody>
+        <tr *ngFor = "let studentRecord of studentCollection">
+          <td>{{ studentRecord.studNumber }}</td>
+          <td>{{ studentRecord.studFirstName }}</td>
+          <td>{{ studentRecord.studLastName }}</td>
+          <td>{{ studentRecord.studProgram }}</td>
+          <td>{{ studentRecord.studYear }}</td>
+        </tr>
+      </tbody>
+    </div>
